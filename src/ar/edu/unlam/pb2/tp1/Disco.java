@@ -6,8 +6,8 @@ public class Disco {
 	private Double radioExterior;
 	private Double perimetroInterior = (2*3.14*radioInterior);
 	private Double perimetroExterior = (2*3.14*radioExterior);
-	private Double superficie = (3.14*(radioExterior*2));
-	
+	private Double superficie = ((3.14*(radioExterior*2))-(3.14*radioInterior*2));
+		
 	
 	
 	public Disco(Double radioInterior, Double radioExterior, Double perimetroInterior, Double perimetroExterior,
