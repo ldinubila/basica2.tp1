@@ -5,8 +5,8 @@ public class Disco {
 	private Double radioInterior;
 	private Double radioExterior;
 	private Double perimetroInterior;
-	private Double perimetroExterior = (2*3.14*radioExterior);
-	private Double superficie = ((3.14*(radioExterior*2))-(3.14*radioInterior*2));
+	private Double perimetroExterior;
+	private Double superficie;
 	final Double numeroPi = 3.14;
 		
 	
@@ -21,9 +21,19 @@ public class Disco {
 	
 	
 	public Double obtenerPerimetroInterior(Double radioInterior) {
-		perimetroInterior = 2*numeroPi*radioInterior;
+		perimetroInterior = (2*numeroPi*radioInterior);
 		return perimetroInterior;
 		
+	}
+	
+	public Double obtenerPerimetroExterior(Double radioExterior) {
+		perimetroExterior = (2*numeroPi*radioExterior);
+		return perimetroExterior;
+	}
+	
+	public Double obtenerSuperficie(Double radioExterior, Double radioInterior ) {
+		superficie = (numeroPi*radioExterior*2)-(numeroPi*radioInterior*2);
+		return superficie;
 	}
 	
 	
