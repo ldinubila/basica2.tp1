@@ -4,21 +4,29 @@ public class Disco {
 	
 	private Double radioInterior;
 	private Double radioExterior;
-	private Double perimetroInterior = (2*3.14*radioInterior);
+	private Double perimetroInterior;
 	private Double perimetroExterior = (2*3.14*radioExterior);
 	private Double superficie = ((3.14*(radioExterior*2))-(3.14*radioInterior*2));
+	final Double numeroPi = 3.14;
 		
-	
 	
 	public Disco(Double radioInterior, Double radioExterior, Double perimetroInterior, Double perimetroExterior,
 			Double superficie) {
-		super();
 		this.radioInterior = radioInterior;
 		this.radioExterior = radioExterior;
 		this.perimetroInterior = perimetroInterior;
 		this.perimetroExterior = perimetroExterior;
 		this.superficie = superficie;
 	}
+	
+	
+	public Double obtenerPerimetroInterior(Double radioInterior) {
+		perimetroInterior = 2*numeroPi*radioInterior;
+		return perimetroInterior;
+		
+	}
+	
+	
 	
 	
 	
