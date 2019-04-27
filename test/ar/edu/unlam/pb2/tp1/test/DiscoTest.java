@@ -16,11 +16,13 @@ public class DiscoTest {
 		String radioExterior;
 		
 		Scanner entradaEscaner = new Scanner (System.in);
+		System.out.println("Ingrese Radio Interior:");
 		radioInterior = entradaEscaner.nextLine();
 		Double castRadioInterior = Double.parseDouble(radioInterior);
+		System.out.println("Ingrese Radio Exterior:");
 		radioExterior = entradaEscaner.nextLine();
 		Double castRadioExterior = Double.parseDouble(radioExterior);
-		//System.out.println (radioInterior);
+		
 		
 				
 		Disco unDisco = new Disco ();
@@ -30,9 +32,9 @@ public class DiscoTest {
 		Double superficie = unDisco.obtenerSuperficie(castRadioExterior, castRadioInterior);
 
 		
-		System.out.println(perimetroInterior);
-		System.out.println(perimetroExterior);
-		System.out.println(superficie);
+		System.out.println("El perimetro interior del disco es: " + perimetroInterior);
+		System.out.println("El perimetro exterior del disco es: " + perimetroExterior);
+		System.out.println("La superficie del disco es: %.2f" + superficie);
 		
 		
 		
