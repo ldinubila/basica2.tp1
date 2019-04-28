@@ -30,7 +30,7 @@ public class Disco {
 	}
 
 	public Double obtenerSuperficie(Double radioExterior, Double radioInterior) {
-		superficie = (Math.PI * radioExterior * 2) - (Math.PI * radioInterior * 2);
+		superficie = (Math.PI * radioExterior * radioExterior) - (Math.PI * radioInterior * radioInterior);
 		return superficie;
 	}
 

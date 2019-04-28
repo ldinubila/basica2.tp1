@@ -41,7 +41,7 @@ public class DiscoTest {
 
 		Disco miDisco = new Disco(radioInterior, radioExterior);
 		miDisco.obtenerSuperficie(radioExterior, radioInterior);
-		Double esperado = (2 * radioExterior * Math.PI) - (2 * radioInterior * Math.PI);
+		Double esperado = (radioExterior * radioExterior * Math.PI) - (radioInterior * radioInterior * Math.PI);
 		Double obtenido = miDisco.getSuperficie();
 
 		assertEquals(esperado, obtenido);
