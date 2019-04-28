@@ -1,82 +1,61 @@
 package ar.edu.unlam.pb2.tp1;
 
 public class Disco {
-	
+
 	private Double radioInterior;
 	private Double radioExterior;
 	private Double perimetroInterior;
 	private Double perimetroExterior;
 	private Double superficie;
-	final Double numeroPi = 3.14;
-		
-	
-	
 
-
-	public Disco() {
-		
-	}
-
-	
-	
-	public Double obtenerPerimetroInterior(Double radioInterior) {
-		perimetroInterior = (2*numeroPi*radioInterior);
-		return perimetroInterior;
-		
-	}
-	
-	public Double obtenerPerimetroExterior(Double radioExterior) {
-		perimetroExterior = (2*numeroPi*radioExterior);
-		return perimetroExterior;
-	}
-	
-	public Double obtenerSuperficie(Double radioExterior, Double radioInterior ) {
-		superficie = (numeroPi*radioExterior*radioExterior)-(numeroPi*radioInterior*radioInterior);
-		return superficie;
-	}
-	
-	
-	
-	
-	
-	public Double getRadioInterior() {
-		return radioInterior;
-	}
-	public void setRadioInterior(Double radioInterior) {
+	public Disco(Double radioInterior, Double radioExterior, Double superficie) {
 		this.radioInterior = radioInterior;
+		this.radioExterior = radioExterior;
+		this.superficie = superficie;
 	}
-	public Double getRadioExterior() {
-		return radioExterior;
-	}
-	public void setRadioExterior(Double radioExterior) {
+	public Disco(Double radioInterior, Double radioExterior) {
+		this.radioInterior = radioInterior;
 		this.radioExterior = radioExterior;
 	}
+
+	public Double obtenerPerimetroInterior(Double radioInterior) {
+		perimetroInterior = (2 * Math.PI * radioInterior);
+		return perimetroInterior;
+
+	}
+
+	public Double obtenerPerimetroExterior(Double radioExterior) {
+		perimetroExterior = (2 * Math.PI * radioExterior);
+		return perimetroExterior;
+	}
+
+	public Double obtenerSuperficie(Double radioExterior, Double radioInterior) {
+		superficie = (Math.PI * radioExterior * 2) - (Math.PI * radioInterior * 2);
+		return superficie;
+	}
+
 	public Double getPerimetroInterior() {
 		return perimetroInterior;
 	}
+
 	public void setPerimetroInterior(Double perimetroInterior) {
 		this.perimetroInterior = perimetroInterior;
 	}
+
 	public Double getPerimetroExterior() {
 		return perimetroExterior;
 	}
+
 	public void setPerimetroExterior(Double perimetroExterior) {
 		this.perimetroExterior = perimetroExterior;
 	}
+
 	public Double getSuperficie() {
 		return superficie;
 	}
+
 	public void setSuperficie(Double superficie) {
 		this.superficie = superficie;
 	}
-	
-	
-	
-	
-	
-}
-	
-	
-	
-	
 
+}

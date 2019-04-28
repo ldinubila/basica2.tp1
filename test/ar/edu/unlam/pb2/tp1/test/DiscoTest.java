@@ -1,46 +1,51 @@
 package ar.edu.unlam.pb2.tp1.test;
 
-import ar.edu.unlam.pb2.tp1.*;
+import static org.junit.Assert.assertEquals;
 
-import java.util.Scanner;
-
-import org.junit.Assert;
 import org.junit.Test;
+
+import ar.edu.unlam.pb2.tp1.Disco;
 
 public class DiscoTest {
 
 	@Test
-	public void test () {
-		
-		String radioInterior;
-		String radioExterior;
-		
-		Scanner entradaEscaner = new Scanner (System.in);
-		System.out.println("Ingrese Radio Interior:");
-		radioInterior = entradaEscaner.nextLine();
-		Double castRadioInterior = Double.parseDouble(radioInterior);
-		System.out.println("Ingrese Radio Exterior:");
-		radioExterior = entradaEscaner.nextLine();
-		Double castRadioExterior = Double.parseDouble(radioExterior);
-		
-		
-				
-		Disco unDisco = new Disco ();
-		
-		Double perimetroExterior = unDisco.obtenerPerimetroExterior(castRadioExterior); 
-		Double perimetroInterior = unDisco.obtenerPerimetroInterior(castRadioInterior);
-		Double superficie = unDisco.obtenerSuperficie(castRadioExterior, castRadioInterior);
+	public void testQueCompruebeElPerimetroInterior() {
 
-		
-		System.out.println("El perimetro interior del disco es: " + perimetroInterior);
-		System.out.println("El perimetro exterior del disco es: " + perimetroExterior);
-		System.out.println("La superficie del disco es: %.2f" + superficie);
-		
-		
-		
-		
-		
+		Double radioInterior = 2.0;
+		Double radioExterior = 4.0;
+
+		Disco miDisco = new Disco(radioInterior, radioExterior);
+		miDisco.obtenerPerimetroInterior(radioInterior);
+		Double esperado = 2 * radioInterior * Math.PI;
+		Double obtenido = miDisco.getPerimetroInterior();
+		assertEquals(esperado, obtenido);
 	}
 
-	
+	@Test
+	public void testQueCompruebeElPerimetroExterior() {
+
+		Double radioInterior = 2.0;
+		Double radioExterior = 4.0;
+
+		Disco miDisco = new Disco(radioInterior, radioExterior);
+		miDisco.obtenerPerimetroExterior(radioExterior);
+		Double esperado = 2 * radioExterior * Math.PI;
+		Double obtenido = miDisco.getPerimetroExterior();
+		assertEquals(esperado, obtenido);
+	}
+
+	@Test
+	public void testQueCompruebeLaSuperficie() {
+		Double radioInterior = 2.0;
+		Double radioExterior = 4.0;
+
+		Disco miDisco = new Disco(radioInterior, radioExterior);
+		miDisco.obtenerSuperficie(radioExterior, radioInterior);
+		Double esperado = (2 * radioExterior * Math.PI) - (2 * radioInterior * Math.PI);
+		Double obtenido = miDisco.getSuperficie();
+
+		assertEquals(esperado, obtenido);
+
+	}
+
 }
